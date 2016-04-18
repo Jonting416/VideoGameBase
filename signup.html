@@ -1,7 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>Video Gamebase - For all your new gaming needs</title>
+Sign-up Page 
+<br>TODO
+<br>Be able to check if a username or password is already taken
+<br>	Limit username to password to up to 10 characters each
+<br>	If they are already in use, then create a pop-up that says so
+<br><br>If a unique username and password are selected, then allow a new account to be created, store this information in the database in the login table.
+<br><br>
+
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,8 +38,29 @@
 				</ul>
 			</div>
 		</div>
-		<!--Can change this to make it prettier later, but for now lets just make the pages-->
-		<h3>Welcome to the Video Gamebase!</h3>
-		<p>Website still in development.</p>
-	</body>
+<!--Popup for if username or password already in use.
+button is only used for testing purposes-->
+<button onclick="popupAlert()">Test</button> 
+<script>
+function popupAlert(){
+	alert("This username/password combination is already being used!");
+}
+</script>
+
+<!--Form for submitting a desired username and password-->
+<center> 
+	<form action="check_signup.php" method="POST">
+		<fieldset>
+		<legend>Sign-Up</legend>
+		Please enter the username and password you want to use <br><br>
+		Username: <input type="text" name="Username" maxlength="10"> 
+		Password: <input type="text" name="Password" maxlength="10"><br><br> <!-- if use top down stacked textboxes then the boxes don't line up -->
+		<input type="submit" value="Submit">
+		</fieldset>
+	</form>
+
+
+
+
+</center>
 </html>

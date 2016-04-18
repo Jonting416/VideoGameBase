@@ -21,7 +21,7 @@
 				</ul>
 				<ul class="pull-right">
 					<li><a href="#">Sign Up</a></li>
-					<li><a href="#">Log In</a></li>
+					<li><a href="login.html">Log In</a></li>
 					<li><a href="#">Help</a></li>
 				</ul>
 			</div>
