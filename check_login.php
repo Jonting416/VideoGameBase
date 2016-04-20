@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Script for popup alert if the username/password combination is wrong-->
@@ -27,7 +31,7 @@ Create a cookie or session to keep a user logged in.
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li>
 						<form id="searchbox" action="">
@@ -37,9 +41,9 @@ Create a cookie or session to keep a user logged in.
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="help.html">Help</a></li>
+					<li><a href="signup.php">Sign Up</a></li>
+					<li><a href="login.php">Log In</a></li>
+					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
 		</div>
@@ -71,7 +75,7 @@ if ($result->num_rows > 0){
 
 	if ($flag == TRUE){
 		 echo "You are now logged in!";
-		 //SET USER STATE TO LOGGED IN USING SESSION OR COOKIE
+		 $_SESSION["User"] = $_POST["Username"]; //Set session variable
 	}
 	else if ($flag == FALSE){
 		echo "Incorrect login!";

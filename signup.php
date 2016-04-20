@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 Sign-up Page 
@@ -22,7 +26,7 @@ Sign-up Page
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li>
 						<form id="searchbox" action="">
@@ -32,9 +36,9 @@ Sign-up Page
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="help.html">Help</a></li>
+					<li><a href="signup.php">Sign Up</a></li>
+					<li><a href="login.php">Log In</a></li>
+					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
 		</div>
@@ -62,16 +66,12 @@ function popupAlert(){
 		<input type="submit" value="Submit">
 		</fieldset>
 	</form>
-
-
-<!--Temporary code
-
-if (username doesn't already exist in the DB){
-	INSERT INTO username(username,password) VALUES (Username,Password);
-}
-
-
- -->
-
 </center>
+
+<?php 
+	if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
+		echo $_SESSION["User"];
+	}
+?>
+
 </html>

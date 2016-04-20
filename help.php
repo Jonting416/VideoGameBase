@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE>
 <html>
 <head>
@@ -15,7 +18,7 @@
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li>
 						<form id="searchbox" action="">
@@ -25,9 +28,9 @@
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="help.html">Help</a></li>
+					<li><a href="signup.php">Sign Up</a></li>
+					<li><a href="login.php">Log In</a></li>
+					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
 		</div>
@@ -40,5 +43,12 @@
 	<li>Jiaming Zhao (jz4bm)</li>
 	<li>Felix Cao ()</li>
 </p1> 
+
+<?php 
+	if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
+		echo $_SESSION["User"];
+	}
+?>
+
 
 </html>

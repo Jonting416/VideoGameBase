@@ -1,9 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE HTML>
 <html lang="en">
 Login Page
 <br> Limit username and password entry to be only up to 10 alphanumeric characters long, use AJAX before sending to server. If they are over 10 alphanumeric characters long then display a popup
 <br> If the username and password combination does not exist, then display a popup
 <br> If the username and password combination exists, then allow the user to login and use sessions to keep the user logged in until they close the browser. After logging in succesfully redirect the user back to the home screen.
+<br> Use password_hash() hashing function to hide password?
 <br> OPTION: Include a forget password functionality
 <br><br>
 	<head>
@@ -21,7 +26,7 @@ Login Page
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li>
 						<form id="searchbox" action="">
@@ -31,9 +36,9 @@ Login Page
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="help.html">Help</a></li>
+					<li><a href="signup.php">Sign Up</a></li>
+					<li><a href="login.php">Log In</a></li>
+					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
 		</div>
@@ -52,8 +57,8 @@ function popupAlert(){
 		<fieldset>
 		<legend>Login</legend>
 		Please enter your username and password <br><br>
-		Username: <input type="text" name="Username" maxlength="10"> 
-		Password: <input type="password" name="Password" maxlength="10"><br><br> <!-- if use top down stacked textboxes then the boxes don't line up -->
+		Username: <input type="text" name="Username" maxlength="20"> 
+		Password: <input type="password" name="Password" maxlength="20"><br><br> <!-- if use top down stacked textboxes then the boxes don't line up -->
 		<input type="submit" value="Submit">
 		</fieldset>
 	</form>

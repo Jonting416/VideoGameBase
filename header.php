@@ -16,7 +16,7 @@
 		<div class="nav">
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 				</ul>
 				<ul class="pull-right">
