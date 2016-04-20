@@ -23,7 +23,7 @@ session_start();
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li>
-						<form id="searchbox" action="">
+						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
 							<input id="submit" type="submit" value="Search">
 						</form>
