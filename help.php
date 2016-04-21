@@ -20,6 +20,7 @@ session_start();
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
+					<li><a href="addgame.php">Add Game</a></li>
 					<li>
 						<form id="searchbox" action="">
 							<input id="search" type="text" placeholder="Type in query here">
@@ -50,7 +51,7 @@ session_start();
 	<li>Jon Ting (jt4ue)</li>
 	<li>Jing-Shuan Chen (jlc6zj)</li>
 	<li>Jiaming Zhao (jz4bm)</li>
-	<li>Felix Cao ()</li>
+	<li>Felix Cao (fdc2gz)</li>
 </p1> 
 
 <?php 

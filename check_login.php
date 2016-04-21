@@ -33,6 +33,7 @@ Create a cookie or session to keep a user logged in.
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
+					<li><a href="addgame.php">Add Game</a></li>
 					<li>
 						<form id="searchbox" action="">
 							<input id="search" type="text" placeholder="Type in query here">
