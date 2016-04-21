@@ -69,10 +69,10 @@ if (isset($_POST["SearchText"])){
 	if ($result->num_rows>0 || $result1->num_rows>0){ //Looking in both game and console table for query
 		echo "<br>Results:";
 		while($row = $result->fetch_assoc()){ //Checking game table
-			echo "<br> Title: ".$row["g_name"];
+			echo "<br> Title: ".$row["g_name"]." Genre: ".$row["genre"]." MSRP: $".$row["msrp"]." Publisher: ".$row["p_name"];
 		}
 		while($row1 = $result1->fetch_assoc()){ //Checking console table
-			echo "<br> Console: ".$row1["c_name"];
+			echo "<br> Console: ".$row1["c_name"]." Manufacturer: ".$row1["manufacturer"]." MSRP: $".$row1["msrp"]." Units Sold: ".$row1["units_sold"]." Release Date: ".$row1["release_date"]." Top Game: ".$row1["top_game"];
 		}
 	}
 	
