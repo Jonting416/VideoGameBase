@@ -1,6 +1,12 @@
 <?php
 session_start();
 ?>
+TODO:
+<br>Search through game names and console names table 
+<br>After entering a query in the search bar, will redirect to a dedicated search page (this page)
+that has a larger search bar and will allow another search to be run
+<br>Will return information from 
+<br>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +51,13 @@ session_start();
 				</ul>
 			</div>
 		</div>
-		<?php 
-			if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-				echo $_SESSION["User"];
-			}
-		?>
 	</body>
 </html>
+
+
+<!-- temporary storage of code for addgame. Create popup and redirect
+echo "<script type='text/javascript'>alert('Please login first!');</script>";
+$URL="http://plato.cs.virginia.edu/~jlc6zj/CS4750Project/index.php";
+echo '<META HTTP-EQUIV="refresh" content="0;URL='.$URL.'">';
+echo "<script type ='text/javascript'>document.location.href='{$URL}';</script>";
+-->
