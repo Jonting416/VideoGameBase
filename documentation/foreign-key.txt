@@ -1,0 +1,15 @@
+First table listed is the one with primary key
+Second table listed is the table you want to create relation with
+
+Console ---- GC ::: c_id
+Game ----- GC ::: g_id
+Publisher --- Game ::: p_name
+Game ----- Reviewer ::: g_id
+Game ------ References ::: g_id
+Game ----- Reviewer ::: g_id
+Game ----- Depth ::: g_id
+Game ----- Watchlist ::: g_id
+User ----- Watchlist ::: username
+User ----- Login ::: username
+User ---- Comments ::: username
+Depth ---- Comments ::: g_id
