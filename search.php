@@ -29,15 +29,6 @@ that has a larger search bar and will allow another search to be run
 					<li><a href="index.php">Home</a></li>
 					<li><a href="browse.php">Browse</a></li>
 					<li><a href="addgame.php">Add Game</a></li>
-					<li>
-
-<!--
-						<form id="searchbox" action="">
-							<input id="search" type="text" placeholder="Type in query here">
-							<input id="submit" type="submit" value="Search">
-						</form>
--->
-					</li>
 				</ul>
 				<ul class="pull-right">
 					<?php
@@ -65,12 +56,31 @@ that has a larger search bar and will allow another search to be run
 		</fieldset>
 	</form>
 </center>
-<?php
+<?php 
+$flag = FALSE;
+require "dbutil.php";
+$db = DbUtil::loginConnection();
 if (isset($_POST["SearchText"])){
-	echo $_POST["SearchText"];
+	$searchWord = $_POST["SearchText"];
+	$sql = ("SELECT * FROM Game WHERE g_name LIKE '%$searchWord%'"); //Query for finding games
+	$sql1 = ("SELECT * FROM Console WHERE c_name LIKE '%$searchWord%'"); //Query for finding consoles
+	$result = $db->query($sql);
+	$result1 = $db->query($sql1);
+	if ($result->num_rows>0 || $result1->num_rows>0){ //Looking in both game and console table for query
+		echo "<br>Results:";
+		while($row = $result->fetch_assoc()){ //Checking game table
+			echo "<br> Title: ".$row["g_name"];
+		}
+		while($row1 = $result1->fetch_assoc()){ //Checking console table
+			echo "<br> Console: ".$row1["c_name"];
+		}
+	}
+	
+	else{ //Found no games or console names that matched
+		echo "No Results Found";
+	}
 }
 ?>
-
 <!-- temporary storage of code for addgame. Create popup and redirect 
 echo "<script type='text/javascript'>alert('Please login first!');</script>";
 $URL="http://plato.cs.virginia.edu/~jlc6zj/CS4750Project/index.php";
