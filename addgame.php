@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	Add games <br>
@@ -17,20 +21,27 @@
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li><a href="addgame.html">Add a Game!</a></li>
 					<li>
-						<form id="searchbox" action="">
+						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
 							<input id="submit" type="submit" value="Search">
 						</form>
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="help.html">Help</a></li>
+					<?php 
+						if(isset($_SESSION["User"])) {
+							echo "<li>Hello " . $_SESSION['User'] . "!</li>\n";
+							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+						} else {
+							echo '<li><a href="signup.php">Sign Up</a></li>
+							<li><a href="login.php">Log In</a></li>';
+						}
+					?>
+					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
 		</div>

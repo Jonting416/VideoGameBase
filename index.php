@@ -36,8 +36,7 @@ session_start();
 							echo "<li><a href='signup.php'>Sign Up</a></li>
 							<li><a href='login.php'>Log In</a></li>";
 						}
-
-						if (isset($_SESSION["User"])){
+						else {
 							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
 							echo "<li><a href='logout.php'>Logout</a></li>";
 						}
@@ -49,11 +48,7 @@ session_start();
 		<!--Can change this to make it prettier later, but for now lets just make the pages-->
 		<h3>Welcome to the Video Gamebase!</h3>
 		<p>Website still in development.</p>
-		<?php 
-			if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-				echo $_SESSION["User"];
-			}
-		?>
+
 
 	</body>
 </html>
