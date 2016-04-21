@@ -22,7 +22,7 @@ session_start();
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
-					<li><a href="addgame.html">Add a Game!</a></li>
+					<li><a href="addgame.php">Add a Game!</a></li>
 					<li>
 						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
