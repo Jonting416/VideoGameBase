@@ -1,6 +1,12 @@
 <?php
 session_start();
 ?>
+TODO:
+<br>Search through game names and console names table 
+<br>After entering a query in the search bar, will redirect to a dedicated search page (this page)
+that has a larger search bar and will allow another search to be run
+<br>Will return information from 
+<br>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +28,7 @@ session_start();
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
-					<li><a href="addgame.html">Add a Game!</a></li>
+					<li><a href="addgame.php">Add Game</a></li>
 					<li>
 						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
@@ -36,7 +42,6 @@ session_start();
 							echo "<li><a href='signup.php'>Sign Up</a></li>
 							<li><a href='login.php'>Log In</a></li>";
 						}
-
 						if (isset($_SESSION["User"])){
 							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
 							echo "<li><a href='logout.php'>Logout</a></li>";
@@ -46,11 +51,13 @@ session_start();
 				</ul>
 			</div>
 		</div>
-		<?php 
-			if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-				echo $_SESSION["User"];
-			}
-		?>
-
 	</body>
 </html>
+
+
+<!-- temporary storage of code for addgame. Create popup and redirect
+echo "<script type='text/javascript'>alert('Please login first!');</script>";
+$URL="http://plato.cs.virginia.edu/~jlc6zj/CS4750Project/index.php";
+echo '<META HTTP-EQUIV="refresh" content="0;URL='.$URL.'">';
+echo "<script type ='text/javascript'>document.location.href='{$URL}';</script>";
+-->

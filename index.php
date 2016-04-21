@@ -22,7 +22,7 @@ session_start();
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
-					<li><a href="addgame.html">Add a Game!</a></li>
+					<li><a href="addgame.php">Add Game</a></li>
 					<li>
 						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
@@ -48,7 +48,5 @@ session_start();
 		<!--Can change this to make it prettier later, but for now lets just make the pages-->
 		<h3>Welcome to the Video Gamebase!</h3>
 		<p>Website still in development.</p>
-
-
 	</body>
 </html>
