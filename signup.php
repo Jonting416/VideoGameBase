@@ -22,26 +22,7 @@ Sign-up Page
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<div class="nav">
-			<!--Container class is in bootstrap to make things look pretty-->
-			<div class="container">
-				<ul class="pull-left">
-					<li><a href="index.php">Home</a></li>
-					<li><a href="browse.php">Browse</a></li>
-					<li>
-						<form id="searchbox" action="search.php" method="POST">
-							<input id="search" type="text" name="SearchText" placeholder="Type in query here" maxlength="25">
-							<input id="submit" type="submit" value="Search">
-						</form>
-					</li>
-				</ul>
-				<ul class="pull-right">
-					<li><a href="signup.php">Sign Up</a></li>
-					<li><a href="login.php">Log In</a></li>
-					<li><a href="help.php">Help</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php include './header.php'; ?>
 <!--Popup for if username or password already in use.
 button is only used for testing purposes-->
 <button onclick="popupAlert()">Test</button> 
@@ -73,5 +54,5 @@ function popupAlert(){
 		echo $_SESSION["User"];
 	}
 ?>
-
+</body>
 </html>

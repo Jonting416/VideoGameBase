@@ -22,29 +22,7 @@ that has a larger search bar and will allow another search to be run
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<div class="nav">
-			<!--Container class is in bootstrap to make things look pretty-->
-			<div class="container">
-				<ul class="pull-left">
-					<li><a href="index.php">Home</a></li>
-					<li><a href="browse.php">Browse</a></li>
-					<li><a href="addgame.php">Add Game</a></li>
-				</ul>
-				<ul class="pull-right">
-					<?php
-						if (!isset($_SESSION["User"])){
-							echo "<li><a href='signup.php'>Sign Up</a></li>
-							<li><a href='login.php'>Log In</a></li>";
-						}
-						if (isset($_SESSION["User"])){
-							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
-							echo "<li><a href='logout.php'>Logout</a></li>";
-						}
-					?> 
-					<li><a href="help.php">Help</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php include 'header.php'; ?>
 	</body>
 </html>
 <center> 
