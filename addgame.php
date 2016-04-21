@@ -21,9 +21,9 @@
 			<!--Container class is in bootstrap to make things look pretty-->
 			<div class="container">
 				<ul class="pull-left">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
-					<li><a href="addgame.html">Add a Game!</a></li>
+					<li><a href="addgame.php">Add a Game!</a></li>
 					<li>
 						<form id="searchbox" action="">
 							<input id="search" type="text" placeholder="Type in query here">

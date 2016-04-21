@@ -31,8 +31,15 @@ session_start();
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.php">Sign Up</a></li>
-					<li><a href="login.php">Log In</a></li>
+					<?php 
+						if(isset($_SESSION["User"])) {
+							echo "<li>Hello " . $_SESSION['User'] . "!</li>\n";
+							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+						} else {
+							echo '<li><a href="signup.php">Sign Up</a></li>
+							<li><a href="login.php">Log In</a></li>';
+						}
+					?>
 					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
@@ -40,11 +47,7 @@ session_start();
 		<!--Can change this to make it prettier later, but for now lets just make the pages-->
 		<h3>Welcome to the Video Gamebase!</h3>
 		<p>Website still in development.</p>
-		<?php 
-			if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-				echo $_SESSION["User"];
-			}
-		?>
+
 
 	</body>
 </html>
