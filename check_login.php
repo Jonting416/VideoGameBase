@@ -41,8 +41,17 @@ Create a cookie or session to keep a user logged in.
 					</li>
 				</ul>
 				<ul class="pull-right">
-					<li><a href="signup.php">Sign Up</a></li>
-					<li><a href="login.php">Log In</a></li>
+					<?php //php segment changing the display bar depending on if logged in or not
+						if (!isset($_SESSION["User"])){
+							echo "<li><a href='signup.php'>Sign Up</a></li>
+							<li><a href='login.php'>Log In</a></li>";
+						}
+
+						if (isset($_SESSION["User"])){
+							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
+							echo "<li><a href='logout.php'>Logout</a></li>";
+						}
+					?> 
 					<li><a href="help.php">Help</a></li>
 				</ul>
 			</div>
