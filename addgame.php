@@ -39,6 +39,8 @@
 						} else {
 							echo '<li><a href="signup.php">Sign Up</a></li>
 							<li><a href="login.php">Log In</a></li>';
+							echo "<script type='text/javascript'>alert('Please login first!');</script>";
+
 						}
 					?>
 					<li><a href="help.php">Help</a></li>

@@ -23,7 +23,6 @@ session_start();
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Browse</a></li>
 					<li><a href="addgame.php">Add Game</a></li>
-
 					<li>
 						<form id="searchbox" action="search.php">
 							<input id="search" type="text" placeholder="Type in query here">
@@ -41,6 +40,7 @@ session_start();
 		<?php
 		session_unset();
 		session_destroy(); //not sure if we need to both unset and destroy	
+		echo "You have been logged out";
 		?>
 	</body>
 </html>

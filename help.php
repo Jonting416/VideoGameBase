@@ -53,12 +53,4 @@ session_start();
 	<li>Jiaming Zhao (jz4bm)</li>
 	<li>Felix Cao (fdc2gz)</li>
 </p1> 
-
-<?php 
-	if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-		echo $_SESSION["User"];
-	}
-?>
-
-
 </html>

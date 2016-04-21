@@ -36,7 +36,6 @@ session_start();
 							echo "<li><a href='signup.php'>Sign Up</a></li>
 							<li><a href='login.php'>Log In</a></li>";
 						}
-
 						if (isset($_SESSION["User"])){
 							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
 							echo "<li><a href='logout.php'>Logout</a></li>";
@@ -51,6 +50,5 @@ session_start();
 				echo $_SESSION["User"];
 			}
 		?>
-
 	</body>
 </html>

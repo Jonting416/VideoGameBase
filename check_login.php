@@ -58,7 +58,6 @@ Create a cookie or session to keep a user logged in.
 			</div>
 		</div>
 <body>
-
 <?php 
 $flag = FALSE;
 require "dbutil.php";
@@ -82,16 +81,13 @@ if ($result->num_rows > 0){
 	they close the session. Otherwise when flag is FALSE the username/password combination
 	does not exist and we want to display a popup alert saying so.
 */
-
 	if ($flag == TRUE){
 		 echo "You are now logged in!";
 		 $_SESSION["User"] = $_POST["Username"]; //Set session variable
 	}
 	else if ($flag == FALSE){
-		echo "Incorrect login!";
-		// popupAlert(); //DOES NOT WORK
+		echo "Wrong password!";
 	}
-
 $db->close;
 ?>
 </body>
