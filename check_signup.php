@@ -4,12 +4,6 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- Script for popup alert if the username is already taken-->
-<script>
-function popupAlert(){
-	alert("This username/password combination is already being used!");
-}
-</script>
 Sign-up PHP page<br>
 TODO<br>
 Make popup alert to let user know that a username is already being used. 
@@ -26,7 +20,7 @@ Need to learn how to run the popupAlert() script.
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<?php include 'headerLogin.php'; ?>
+		<?php include 'header.php'; ?>
 	<body>
 
 <?php 
@@ -53,8 +47,7 @@ into our database
 */
 
 	if ($flag == TRUE){
-		//popupAlert(); Right way to run the script?
-		 echo "username already taken test";
+		 echo "<script type='text/javascript'>alert('Username already taken!');</script>";
 	}
 	else if ($flag == FALSE){
 		echo "new account created";

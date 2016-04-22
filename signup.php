@@ -48,11 +48,5 @@ function popupAlert(){
 		</fieldset>
 	</form>
 </center>
-
-<?php 
-	if (isset($_SESSION["User"])){ //test statement to make sure user is still logged in
-		echo $_SESSION["User"];
-	}
-?>
 </body>
 </html>

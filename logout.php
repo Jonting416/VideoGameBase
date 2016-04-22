@@ -16,8 +16,8 @@ session_start();
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<?php include './headerLogin.php'; ?>
-		<?php
+		<?php 
+		include './header.php'; 
 		session_unset();
 		session_destroy(); //not sure if we need to both unset and destroy	
 		echo "<div class=\"container\">You have been logged out</div>";

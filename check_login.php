@@ -53,12 +53,19 @@ if ($result->num_rows > 0){
 	does not exist and we want to display a popup alert saying so.
 */
 	if ($flag == TRUE){
-		 echo "You are now logged in!";
-		 $_SESSION["User"] = $_POST["Username"]; //Set session variable
+		$_SESSION["User"] = $_POST["Username"]; //Set session variable
+		echo "<script type='text/javascript'>alert('You're now logged in!');</script>";
+		$URL="./index.php";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL='.$URL.'">';
+		echo "<script type ='text/javascript'>document.location.href='{$URL}';</script>";
+		echo '<li><a href="signup.php">Sign Up</a></li>
+		<li><a href="login.php">Log In</a></li>';
 	}
 	else if ($flag == FALSE){
-		echo "Wrong password!";
+		echo "Could not login, please try again";
 	}
+
+	
 $db->close;
 ?>
 </body>

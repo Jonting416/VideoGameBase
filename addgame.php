@@ -26,14 +26,7 @@
 					echo "<p> Game name is " . $_POST["gamename"] . ".\n Pic URL is " . $_POST["picURL"] . ".</p>";
 					echo "<p> Genres selected: " . $_POST["genreForm"][0] . $_POST["genreForm"][1] . $_POST["genreForm"][2] . $_POST["genreForm"][3] . ".</p>";
 					foreach ($_POST as $key => $value) {
-				        echo "<tr>";
-				        echo "<td>";
-				        echo $key;
-				        echo "</td>";
-				        echo "<td>";
-				        echo $value;
-				        echo "</td>";
-				        echo "</tr>";
+				        echo "<tr><td>".$key."</td><td>".$value."</td></tr>";
 				    }
 				}
 			?>
@@ -47,16 +40,45 @@
 					<input type="text" class="form-control" name="picURL">
 				</div>
 				<div class="form-group">
+					<label for="publisher">Publisher:</label>
+					<input type="text" class="form-control" name="publisher">
+				</div>
+				<div class="form-group">
+					<label for="MSRP">MSRP:</label>
+					<input type="text" class="form-control" name="MSRP">
+				</div>
+				<div class="form-group">
 					<label for="genreForm">Select Genre (ctrl+click to select multiple)</label>
 					<select multiple="multiple" class="form-control" name="genreForm[]">
-						<option value="1">RPG</option>
-						<option value="2">Action</option>
-						<option value="3">FPS</option>
-						<option value="4">Adventure</option>
+						<option value="RPG">RPG</option>
+						<option value="Action">Action</option>
+						<option value="FPS">FPS</option>
+						<option value="Adventure">Adventure</option>
 					</select>
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 			</form>
+
+			<?php
+				require "dbutil.php"; //Connect to DB
+				$db = DbUtil::loginConnection();
+
+				if(!empty($_POST["gamename"]) && !empty($_POST["picURL"]) &&!empty($_POST["publisher"]) && !empty($_POST["MSRP"]) && !empty($_POST["genreForm"])){ // enter entry into DB
+					echo "<script type='text/javascript'>alert('form is filled!');</script>";
+					$gamename = $_POST["gamename"];
+					$picURL = $_POST["picURL"];
+					$publisher = $_POST["publisher"];
+					$MSRP = $_POST["MSRP"];
+					$genreForm = $_POST["genreForm"];
+
+					$sql = ("INSERT INTO Game (g_name, cover_pic, genre, msrp, p_name) VALUES ('$gamename','$picURL','$genreForm','$MSRP','$publisher')"); //DOESNT WORK
+
+				}
+				else{
+					echo "<script type='text/javascript'>alert('Please fill in every field!');</script>"; //If not every field is filled. WANT SOME WAY TO MAKE IT RUN ONLY AFTER THE FORM HAS BEEN SUBMITTED
+					echo $_POST["genreForm"];
+				}
+			?>
 		</div>
 	</body>
 </html>
