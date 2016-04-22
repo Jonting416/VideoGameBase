@@ -22,7 +22,7 @@
 			<legend><h2>Add Game</h2></legend>
 			<?php
 				//echo "<p> Testing </p>";
-				if(isset($_POST)) {
+				if($_SERVER['REQUEST_METHOD'] == 'POST') {
 				/*	echo "<p> Game name is " . $_POST["gamename"] . ".\n Pic URL is " . $_POST["picURL"] . ".</p>";
 					echo "<p> Genres selected: " . $_POST["genreForm"][0] . $_POST["genreForm"][1] . $_POST["genreForm"][2] . $_POST["genreForm"][3] . ".</p>";
 					foreach ($_POST as $key => $value) {
@@ -65,6 +65,7 @@
 				    	$genre .= "Adventure";
 				    }
 				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')";
+				    $db->query($sql);
 				    echo "<p>Game added!</p>";
 				}
 			?>
