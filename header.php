@@ -19,7 +19,7 @@
 							<li><a href='login.php'>Log In</a></li>";
 						}
 						else {
-							echo "<li> Hello, ". $_SESSION["User"] ."</li>";
+							echo "<li> Hello, ". $_SESSION["User"] ."! </li>";
 							echo "<li><a href='logout.php'>Logout</a></li>";
 						}
 					?> 
