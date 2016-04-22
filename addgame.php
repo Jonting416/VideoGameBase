@@ -21,9 +21,9 @@
 		<div class="container">
 			<legend><h2>Add Game</h2></legend>
 			<?php
-				echo "<p> Testing </p>";
+				//echo "<p> Testing </p>";
 				if(isset($_POST)) {
-					echo "<p> Game name is " . $_POST["gamename"] . ".\n Pic URL is " . $_POST["picURL"] . ".</p>";
+				/*	echo "<p> Game name is " . $_POST["gamename"] . ".\n Pic URL is " . $_POST["picURL"] . ".</p>";
 					echo "<p> Genres selected: " . $_POST["genreForm"][0] . $_POST["genreForm"][1] . $_POST["genreForm"][2] . $_POST["genreForm"][3] . ".</p>";
 					foreach ($_POST as $key => $value) {
 				        echo "<tr>";
@@ -34,10 +34,45 @@
 				        echo $value;
 				        echo "</td>";
 				        echo "</tr>";
+				    }*/
+				    require "dbutil.php";
+				    $db = DbUtil::loginConnection();
+
+				    /*Initially just insert into the game
+				    * Not worrying about checking previous records yet
+				    */
+				    $gameid = $_POST["gameid"];
+				    $gamename = $_POST["gamename"];
+				    $picURL = $_POST["picURL"];
+				    $msrp = $_POST["msrp"];
+				    $pubname = $_POST["pubname"];
+				    $genarr = implode($_POST["genreForm"]);
+				    $pos = strpos($genarr, '1');
+				    $genre = "";
+				    if($pos !== false) {
+				    	$genre .= "RPG ";
 				    }
+				    $pos = strpos($genarr, '2');
+				    if($pos !== false) {
+				    	$genre .= "Action ";
+				    }
+				    $pos = strpos($genarr, '3');
+				    if($pos !== false) {
+				    	$genre .= "FPS ";
+				    }
+				    $pos = strpos($genarr, '4');
+				    if($pos !== false) {
+				    	$genre .= "Adventure";
+				    }
+				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')";
+				    echo "<p>Game added!</p>";
 				}
 			?>
 			<form enctype="multipart/form-data" role="form" method="POST" action="addgame.php">
+				<div class="form-group">
+					<label for="gameid">Game ID:</label>
+					<input type="text" class="form-control" name="gameid">
+				</div>
 				<div class="form-group">
 					<label for="gamename">Game Name:</label>
 					<input type="text" class="form-control" name="gamename">
@@ -54,6 +89,14 @@
 						<option value="3">FPS</option>
 						<option value="4">Adventure</option>
 					</select>
+				</div>
+				<div class="form-group">
+					<label for="msrp">MSRP:</label>
+					<input type="text" class="form-control" name="msrp">
+				</div>
+				<div class="form-group">
+					<label for="pubname">Publisher Name:</label>
+					<input type="text" class="form-control" name="pubname">
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 			</form>
