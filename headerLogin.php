@@ -15,7 +15,7 @@
 				<ul class="pull-right">
 					<?php 
 						if(isset($_SESSION["User"])) {
-							echo "<li>Hello " . $_SESSION['User'] . "!</li>\n";
+							echo "<li>Hello " . $_SESSION['User'] . "!</li>";
 							echo "<li><a href=\"logout.php\">Log Out</a></li>";
 						} else {
 							echo "<script type='text/javascript'>alert('Please login first!');</script>";
