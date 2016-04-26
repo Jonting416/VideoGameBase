@@ -57,8 +57,14 @@
 				    if($pos !== false) {
 				    	$genre .= "Adventure";
 				    }
+				    $multi = $_POST["multi"];
+				    $units_sold = $_POST["units_sold"];
+				    $release_yr = $_POST["release_yr"];
+				    $meta_score = $_POST["meta_score"];
 				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')";
+				    $sql2 = "INSERT INTO Depth (g_id, multiplayer, units_sold, release_yr, meta_score) VALUES ('$gameid', '$multi', '$units_sold', '$release_yr', '$meta_score')";
 				    $db->query($sql);
+				    $db->query($sql2);
 				    echo "<p>Game added!</p>";
 				}
 			?>
@@ -99,6 +105,21 @@
 				<div class="form-group">
 					<label for="pubname">Publisher Name:</label>
 					<input type="text" class="form-control" name="pubname">
+				</div>
+				<div class="form-group">
+					<label><input type="checkbox" value="" name="multi">Is this game multiplayer?</label>
+				</div>
+				<div class="form-group">
+					<label for="units_sold">Units Sold:</label>
+					<input type="text" class="form-control" name="units_sold">
+				</div>
+				<div class="form-group">
+					<label for="release_yr">Release Year:</label>
+					<input type="text" class="form-control" name="release_yr">
+				</div>
+				<div class="form-group">
+					<label for="meta_score">Meta Score:</label>
+					<input type="text" class="form-control" name="meta_score">
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 			</form>

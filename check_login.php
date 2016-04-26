@@ -11,11 +11,6 @@ function popupAlert(){
 }
 </script>
 Login PHP page<br>
-TODO<br>
-Make popup alert to let user know that a username/password is wrong. 
-Need to learn how to run the popupAlert() script.
-Create a cookie or session to keep a user logged in.
-
 <head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
@@ -34,7 +29,7 @@ $flag = FALSE;
 require "dbutil.php";
 $db = DbUtil::loginConnection();
 
-/* Check to make sure that the Username requested is not already in use
+/* Check to make sure that the Username requested is in use
 If already in use: Return alert message saying to pick a different username
 If not already in use: Add the Username and Password to the DB 
 */
