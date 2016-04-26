@@ -29,7 +29,7 @@ $flag = FALSE;
 require "dbutil.php";
 $db = DbUtil::loginConnection();
 
-/* Check to make sure that the Username requested is not already in use
+/* Check to make sure that the Username requested is in use
 If already in use: Return alert message saying to pick a different username
 If not already in use: Add the Username and Password to the DB 
 */
