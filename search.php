@@ -2,10 +2,7 @@
 session_start();
 ?>
 TODO:
-<br>Search through game names and console names table 
-<br>After entering a query in the search bar, will redirect to a dedicated search page (this page)
-that has a larger search bar and will allow another search to be run
-<br>Will from DB
+<br>Will have clickable links that lead to an in-depth information page
 <br>
 
 <!DOCTYPE html>
