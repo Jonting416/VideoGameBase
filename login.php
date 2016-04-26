@@ -6,6 +6,8 @@ session_start();
 <html lang="en">
 Login Page
 <br> Limit username and password entry to be only up to 10 alphanumeric characters long, use AJAX before sending to server. If they are over 10 alphanumeric characters long then display a popup
+<br> If the username and password combination does not exist, then display a popup
+<br> If the username and password combination exists, then allow the user to login and use sessions to keep the user logged in until they close the browser. After logging in succesfully redirect the user back to the home screen.
 <br> Use password_hash() hashing function to hide password?
 <br> OPTION: Include a forget password functionality
 <br><br>

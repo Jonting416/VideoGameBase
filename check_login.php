@@ -11,6 +11,11 @@ function popupAlert(){
 }
 </script>
 Login PHP page<br>
+TODO<br>
+Make popup alert to let user know that a username/password is wrong. 
+Need to learn how to run the popupAlert() script.
+Create a cookie or session to keep a user logged in.
+
 <head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
