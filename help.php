@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE>
 <html>
+TODO: Figure out how to export DB
 <head>
 	<!--The following part of head is all bootstrap initialization-->
 	<meta charset="utf-8">
@@ -13,6 +14,23 @@ session_start();
 	<!--This line is adding in the custom css sheet-->
 	<link rel="stylesheet" href="css/main.css">
 </head>
+
+<?php
+require "dbutil.php";
+$db = DbUtil::loginConnection();
+?>
+
+<script>
+function export(){
+$data = array();
+while($row = mysql_fetch_array($result))
+{
+  $data[] = array("PhoneNumber"=>$row['PhoneNumber'],"Name"=>$row['Name']); 
+}
+print_r (json_encode($data));  
+}
+</script>
+
 	<body>
 		<?php include './header.php'; ?>
 	</body>
@@ -24,4 +42,9 @@ session_start();
 	<li>Jiaming Zhao (jz4bm)</li>
 	<li>Felix Cao (fdc2gz)</li>
 </p1> 
+
+<br><br> 
+<?php 
+echo 'button type="button" onclick="export()">Export</button>';
+?>
 </html>

@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="en">
 Login Page
-<br> Limit username and password entry to be only up to 10 alphanumeric characters long, use AJAX before sending to server. If they are over 10 alphanumeric characters long then display a popup
+<br> Use AJAX before sending to server.
 <br> Use password_hash() hashing function to hide password?
 <br> OPTION: Include a forget password functionality
 <br><br>
