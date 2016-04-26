@@ -12,9 +12,6 @@ function popupAlert(){
 </script>
 Sign-up PHP page<br>
 TODO<br>
-Make popup alert to let user know that a username is already being used. 
-Need to learn how to run the popupAlert() script.
-
 <head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
