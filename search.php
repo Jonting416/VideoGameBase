@@ -32,7 +32,7 @@ TODO:
 </center>
 <!--AJAX Script-->
 <script>
-function loadInDepth(){
+function loadInDepth(gameName){ //Pass in gameName 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -61,7 +61,7 @@ if (isset($_POST["SearchText"])){
 		while($row = $result->fetch_assoc()){ //Checking game table
 			echo "<tr>" ;
 			echo '<td>'.$row["g_name"].'</td>'. "<td> Genre: ".$row["genre"]."</td><td> MSRP: $".$row["msrp"]."</td><td> Publisher: ".$row["p_name"]."</td>".
-				'<td><button type="button" onclick="loadInDepth()">In-Depth Information</button></td>';
+				'<td><button type="button" onclick="loadInDepth("$row[g_name]")">In-Depth Information</button></td>';
 		}
 		while($row1 = $result1->fetch_assoc()){ //Checking console table
 			echo "<br> Console: ".$row1["c_name"]." Manufacturer: ".$row1["manufacturer"]." MSRP: $".$row1["msrp"]." Units Sold: ".$row1["units_sold"]." Release Date: ".$row1["release_date"]." Top Game: ".$row1["top_game"];
@@ -74,9 +74,3 @@ if (isset($_POST["SearchText"])){
 	}
 }
 ?>
-<!-- temporary storage of code for addgame. Create popup and redirect 
-echo "<script type='text/javascript'>alert('Please login first!');</script>";
-$URL="http://plato.cs.virginia.edu/~jlc6zj/CS4750Project/index.php";
-echo '<META HTTP-EQUIV="refresh" content="0;URL='.$URL.'">';
-echo "<script type ='text/javascript'>document.location.href='{$URL}';</script>";
--->
