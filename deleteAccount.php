@@ -1,10 +1,10 @@
 <?php
-session_start();
+	session_start();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-	<head> 
+	<head>
 		<title>Video Gamebase - For all your new gaming needs</title>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
@@ -16,28 +16,16 @@ session_start();
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
-	<script>
-		function yesSelected(){
-			var xhttp = new XMLHttpRequest();
-  			xhttp.onreadystatechange = function() {
-	    		if (xhttp.readyState == 4 && xhttp.status == 200) {
-	      			document.getElementById("logoutText").innerHTML = xhttp.responseText;
-	    		}
-	  		};	
-  			xhttp.open("GET", "logoutAjax.php", true);//Call search.php and send str as the variable q
-  			xhttp.send();//Change	
-		}
-	</script>
-
 	<body>
-		<?php 
-		include './header.php'; 
-		?>
-
-		<div id='logoutText'> Are you sure you want to logout?
-			<button type='button' onclick='yesSelected()'>Yes</button>
-			<button type='button' onclick="location.href='index.php';">No</button>
+		<?php include './header.php'; ?>
+		<div class="container">
+			<div class="jumbotron">
+				<p style="color:red;font-size:xx-large;">Are you sure?  You can't go back after you do this!</p>
+				<form class="form-inline" role="form" method="POST" action="deleteAccount.php">
+					<button type="submit" class="btn btn-danger">Yes, I want to delete my account.</button>
+					<a href="./index.php"><button type="button" class="btn btn-secondary">No, I do not want to delete my account.</button></a>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
-

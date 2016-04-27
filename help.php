@@ -35,4 +35,6 @@ $db = DbUtil::loginConnection();
 <form action="export.php" method="GET"> 
 <input type="submit" value="Export">
 </form>
+<a href="deleteAccount.php"><button class = "btn btn-danger">Delete Account</button></a>
+</form>
 </html>
