@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <?php
-//Need to integrate export function into website
 	include 'dbutil.php';
 	$db = DbUtil::loginConnection();
 
