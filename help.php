@@ -19,18 +19,6 @@ TODO: Figure out how to export DB
 require "dbutil.php";
 $db = DbUtil::loginConnection();
 ?>
-
-<script>
-function export(){
-$data = array();
-while($row = mysql_fetch_array($result))
-{
-  $data[] = array("PhoneNumber"=>$row['PhoneNumber'],"Name"=>$row['Name']); 
-}
-print_r (json_encode($data));  
-}
-</script>
-
 	<body>
 		<?php include './header.php'; ?>
 	</body>
@@ -44,7 +32,7 @@ print_r (json_encode($data));
 </p1> 
 
 <br><br> 
-<?php 
-echo 'button type="button" onclick="export()">Export</button>';
-?>
+<form action="export.php" method="GET"> 
+<input type="submit" value="Export">
+</form>
 </html>

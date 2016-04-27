@@ -10,7 +10,7 @@
 	$tb = array();
 	while($tb = mysqli_fetch_object($tables)){
 		$result = array();
-		$table = $tb->Tables_in_databaseproject;
+		$table = $tb->Tables_in_cs4750jt4ue;
 		$rows = $db->query("SELECT * FROM $table");
 		while($row = mysqli_fetch_assoc($rows)){
 			$result[] = $row;
@@ -19,6 +19,6 @@
 		echo "<br>";
 	}
 
-	// echo json_encode($tb);
+	echo json_encode($tb);
 ?>
 </html>

@@ -32,9 +32,6 @@ session_start();
 	<body>
 		<?php 
 		include './header.php'; 
-		//session_unset();
-		//session_destroy(); //not sure if we need to both unset and destroy	
-		//echo "<div class=\"container\">You have been logged out</div>";
 		?>
 
 		<div id='logoutText'> Are you sure you want to logout?
