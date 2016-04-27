@@ -19,7 +19,7 @@ session_start();
 		<?php include './header.php'; ?>
 		<!--Can change this to make it prettier later, but for now lets just make the pages-->
 		<div class="container">
-			<div class="jumbotron" style="margin-bottom: 0px;background-image:url(./indexImage.png);color:white;background-size:100%;background-position: 0% 25%;background-repeat:no-repeat;text-shadow: black 0.3em 0.3em 0.3em; min-height:300px;">
+			<div class="jumbotron" style="margin-bottom: 0px;background-image:url(./indexImage.jpg);color:white;background-size:100%;background-position: 0% 25%;background-repeat:no-repeat;text-shadow: black 0.3em 0.3em 0.3em; min-height:300px;">
 				<h3>Welcome to the Video Gamebase!</h3>
 				<p>We aim to provide a database of video game titles.</p>
 			</div>
