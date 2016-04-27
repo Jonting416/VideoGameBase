@@ -51,7 +51,7 @@ In-Depth
 			</div>
 			<div class="row">
 				<div class="col-md-4">MSRP:</div>
-				<div class="col-md-8"><?php echo $msrp; ?></div>
+				<div class="col-md-8"><?php echo "$".$msrp; ?></div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">Publisher:</div>

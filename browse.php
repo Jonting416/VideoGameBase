@@ -34,7 +34,7 @@ $db = DbUtil::loginConnection();
 		echo '<table class="table table-striped">'; //putting results into a table
 		while($row = $resultJoin->fetch_assoc()){ //Checking game table
 			echo "<tr>" ;
-			echo '<td><a href="indepth.php?name='.$row["g_name"].'">'.$row["g_name"].'</a></td>'. "<td> Genre: ".$row["genre"]."</td><td> MSRP: $".$row["msrp"]."</td><td> Publisher: ".$row["p_name"]."</td>"."<td>Average Review: ".$row["Average"]."</td>";
+			echo '<td><a href="indepth.php?name='.$row["g_name"].'">'.$row["g_name"].'</a></td>'. "<td> Genre: ".$row["genre"]."</td><td> MSRP: $".$row["msrp"]."</td><td> Publisher: ".$row["p_name"]."</td>"."<td>Average Review: ".$row["Average"]."</td><td></td>";
 		}
 		while($row1 = $result1->fetch_assoc()){ //Checking console table
 			echo "<tr>";
@@ -42,7 +42,7 @@ $db = DbUtil::loginConnection();
 		}
 		while($row2 = $resultPublish->fetch_assoc()){ //Checking publisher table
 			echo "<tr>";
-			echo "<td> Publisher: ".$row2["p_name"]."</td><td> Location: ".$row2["location"]."</td><td> Number of Games Published: ".$row2["num_games"]."</td><td>Revenue: ".$row2["revenue"]."</td><td> CEO: ".$row2["ceo"]."</td><td> Established: ".$row2["p_year"]."</td>";
+			echo "<td> Publisher: ".$row2["p_name"]."</td><td> Location: ".$row2["location"]."</td><td> Number of Games Published: ".$row2["num_games"]."</td><td>Revenue: $".$row2["revenue"]."</td><td> CEO: ".$row2["ceo"]."</td><td> Established: ".$row2["p_year"]."</td>";
 		}
 	}
 	else{ //Found no games or console names that matched
