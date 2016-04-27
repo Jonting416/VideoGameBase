@@ -28,7 +28,7 @@ session_start();
   			xhttp.send();//Change	
 		}
 	</script>
-
+<div class="container">
 	<body>
 		<?php 
 		include './header.php'; 
@@ -39,5 +39,6 @@ session_start();
 			<button type='button' onclick="location.href='index.php';">No</button>
 		</div>
 	</body>
+</div>
 </html>
 

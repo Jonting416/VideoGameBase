@@ -21,9 +21,10 @@ Login PHP page<br>
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+	<div class="container">
 	<body>
 		<?php include 'header.php'; ?>
-	<body>
+	<body>		
 <?php 
 $flag = FALSE;
 require "dbutil.php";
@@ -64,5 +65,6 @@ if ($result->num_rows > 0){
 	
 $db->close;
 ?>
+</div>
 </body>
 </html>

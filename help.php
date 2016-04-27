@@ -19,6 +19,7 @@ Help<br>
 require "dbutil.php";
 $db = DbUtil::loginConnection();
 ?>
+<div class="container">
 	<body>
 		<?php include './header.php'; ?>
 	</body>
@@ -37,4 +38,5 @@ $db = DbUtil::loginConnection();
 </form>
 <a href="deleteAccount.php"><button class = "btn btn-danger">Delete Account</button></a>
 </form>
+</div>
 </html>

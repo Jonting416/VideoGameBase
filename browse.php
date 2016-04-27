@@ -15,6 +15,7 @@ Browse
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+	<div class="container">
 	<body>
 		<?php include 'header.php' ?>
 <?php 
@@ -49,4 +50,6 @@ $db = DbUtil::loginConnection();
 		echo "No Results Found";
 	}
 ?>
+</body>
+</div>
 </html>

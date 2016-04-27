@@ -14,6 +14,7 @@ session_start();
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+	<div class="container">
 	<body>
 		<?php include 'header.php'; ?>
 		<center> 
@@ -40,5 +41,5 @@ session_start();
 		</script>
 		<div id="SnameResult">Search Result</div>
 	</body>
-
+</div>
 </html>

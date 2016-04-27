@@ -15,7 +15,7 @@ session_start();
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-
+	<div class="container">
 	<body>
 	<?php include './header.php'; 
 	require "dbutil.php";
@@ -50,4 +50,5 @@ session_start();
 	</form>
 
 	</body>
+</div>
 </html>

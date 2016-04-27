@@ -15,7 +15,7 @@ session_start();
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-
+	<div class="container">
 	<body>
 	<?php include './header.php'; 
 	require "dbutil.php";
@@ -48,6 +48,6 @@ session_start();
 		<input id="addGame" type="text" name="addGame" placeholder="Game Title" maxlength="25">
 		<input id="submit" type="submit" value="Add">
 	</form>
-
 	</body>
+</div>
 </html>
