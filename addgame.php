@@ -61,18 +61,19 @@
 				    $units_sold = $_POST["units_sold"];
 				    $release_yr = $_POST["release_yr"];
 				    $meta_score = $_POST["meta_score"];
-				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')"; //Doesnt work, neither tables are getting updated
-				    $sql2 = "INSERT INTO Depth (g_id, multiplayer, units_sold, release_yr, meta_score) VALUES ('$gameid', '$multi', '$units_sold', '$release_yr', '$meta_score')";
-				    $db->query($sql);
+				    $sql = "INSERT INTO Game (g_name, cover_pic, genre, msrp, p_name) VALUES ('$gamename', '$picURL', '$Genre', '$msrp', '$pubname')"; //Doesnt work, neither tables are getting updated
+				    $sql2 = "INSERT INTO Depth (multiplayer, units_sold, release_yr, meta_score) VALUES ('$multi', '$units_sold', '$release_yr', '$meta_score')";
+				    $q = $db->query($sql);
 				    $db->query($sql2);
-				    echo "<p>Game added!</p>";
+				    //echo "<p>Game added!</p>";
+				    if($q) {
+				    	echo "<p>Game Added!</p>";
+				    } else {
+				    	echo "<p>Game failed to add.</p>";
+				    }
 				}
 			?>
 			<form enctype="multipart/form-data" role="form" method="POST" action="addgame.php">
-				<div class="form-group">
-					<label for="gameid">Game ID:</label>
-					<input type="text" class="form-control" name="gameid">
-				</div>
 				<div class="form-group">
 					<label for="gamename">Game Name:</label>
 					<input type="text" class="form-control" name="gamename">
