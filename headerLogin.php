@@ -3,7 +3,7 @@
 			<div class="container">
 				<ul class="pull-left">
 					<li><a href="index.php">Home</a></li>
-					<li><a href="#">Browse</a></li>
+					<li><a href="browse.php">Browse</a></li>
 					<li><a href="addgame.php">Add a Game!</a></li>
 					<li>
 						<form id="searchbox" action="search.php" method="POST">
@@ -17,6 +17,7 @@
 						if(isset($_SESSION["User"])) {
 							echo "<li>Hello " . $_SESSION['User'] . "!</li>";
 							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+							echo "<li><a href=\"watchlist.php\">Wishlist</a></li>";
 						} else {
 							echo "<script type='text/javascript'>alert('Please login first!');</script>";
 							$URL="./index.php";
