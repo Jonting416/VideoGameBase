@@ -6,7 +6,7 @@
 					<li><a href="browse.php">Browse</a></li>
 					<li><a href="addgame.php">Add Game</a></li>
 					<li>
-						<form id="searchbox" action="search.php" method="POST">
+						<form id="searchbox" action="searchAjax.html" method="POST">
 							<input id="search" type="text" name="SearchText" placeholder="Type in query here" maxlength="25">
 							<input id="submit" type="submit" value="Search">
 						</form>
