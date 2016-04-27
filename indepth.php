@@ -26,8 +26,11 @@ In-Depth
 				$db = DbUtil::loginConnection();
 				$name = $_GET["name"];
 				$sql = "SELECT * FROM Game NATURAL JOIN Depth WHERE g_name LIKE '$name'";
+				$sql1 = "SELECT * FROM Game NATURAL JOIN Sources WHERE g_name LIKE '$name'";
 				$result = $db->query($sql);
+				$result1 = $db->query($sql1);
 				$row = $result->fetch_assoc();
+				$row1 = $result1->fetch_assoc();
 				$genre = $row["genre"];
 				$msrp = $row["msrp"];
 				$pub = $row["p_name"];
@@ -35,6 +38,8 @@ In-Depth
 				$units_sold = $row["units_sold"];
 				$release_yr = $row["release_yr"];
 				$meta_score = $row["meta_score"];
+				$trailerLink = $row1["trailer_link"];
+				$reviewLink = $row1["r_link"];
 			?>
 			<div class="row">
 				<div class="col-md-4">Game Name:</div>
@@ -67,6 +72,14 @@ In-Depth
 			<div class="row">
 				<div class="col-md-4">Meta Score:</div>
 				<div class="col-md-8"><?php echo $meta_score; ?></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Trailer Link:</div>
+				<div class="col-md-8"><?php echo "<a href=".$trailerLink.">".$trailerLink."</a>"; ?></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Review Link:</div>
+				<div class="col-md-8"><?php echo "<a href=".$reviewLink.">".$reviewLink."</a>"; ?></div>
 			</div>
 		</div>
 	</body>
