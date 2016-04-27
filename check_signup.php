@@ -15,9 +15,10 @@ Sign-up PHP page<br>
 		<!--This line is adding in the custom css sheet-->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+	<div class="container">
 	<body>
 		<?php include 'header.php'; ?>
-	<body>
+	
 
 <?php 
 $flag = FALSE;
@@ -60,4 +61,5 @@ into our database
 $db->close;
 ?>
 </body>
+</div>
 </html>

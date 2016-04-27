@@ -14,6 +14,7 @@
 					<li><a href="index.php">Home</a></li>
 					<li><a href="browse.php">Browse</a></li>
 					<li><a href="addgame.php">Add Game</a></li>
+					<li><a href="addReview.php">Add Review</a><li>
 					<li><a href="searchInteractive.php">Search</a></li>
           </ul>
 				<ul class="nav navbar-nav navbar-right">
