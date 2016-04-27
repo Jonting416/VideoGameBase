@@ -2,8 +2,6 @@
 session_start();
 ?>
 In-Depth
-<br>TODO:
-
 <!DOCTYPE HTML>
 <html lang=en>
 <head>

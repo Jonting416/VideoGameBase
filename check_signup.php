@@ -5,7 +5,6 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 Sign-up PHP page<br>
-TODO<br>
 <head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">

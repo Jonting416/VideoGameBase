@@ -3,7 +3,7 @@ session_start();
 ?>
 <!DOCTYPE>
 <html>
-TODO: Figure out how to export DB
+Help<br>
 <head>
 	<!--The following part of head is all bootstrap initialization-->
 	<meta charset="utf-8">

@@ -4,11 +4,7 @@ session_start();
 
 <!DOCTYPE HTML>
 <html lang="en">
-Login Page
-<br> Use AJAX before sending to server.
-<br> Use password_hash() hashing function to hide password?
-<br> OPTION: Include a forget password functionality
-<br><br>
+Login Page <br> 
 	<head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">

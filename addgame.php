@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 	Add games <br>
-	TODO: <br><br>
 	<head>
 		<!--The following part of head is all bootstrap initialization-->
 		<meta charset="utf-8">
