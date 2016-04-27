@@ -14,12 +14,7 @@
 					<li><a href="index.php">Home</a></li>
 					<li><a href="browse.php">Browse</a></li>
 					<li><a href="addgame.php">Add Game</a></li>
-					<li>
-						<form id="searchbox" action="searchInteractive.php" method="POST">
-							<input id="search" type="text" name="SearchText" placeholder="Type in query here" maxlength="25">
-							<input id="submit" type="submit" value="Search">
-						</form>
-					</li>
+					<li><a href="searchInteractive.php">Search</a></li>
           </ul>
 				<ul class="nav navbar-nav navbar-right">
 					<?php //php segment changing the display bar depending on if logged in or not
@@ -28,7 +23,7 @@
 							<li><a href='login.php'>Log In</a></li>";
 						}
 						else {
-							echo "<li> Hello, ". $_SESSION["User"] ."! </li>";
+							echo "<li><a href='#'> Hello, ". $_SESSION["User"] ."! </a></li>";
 							echo "<li><a href='logout.php'>Logout </a></li>";
 							echo "<li><a href= \"watchlist.php\">Wishlist </a></li>";
 						}
@@ -38,3 +33,4 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <br><br><br>

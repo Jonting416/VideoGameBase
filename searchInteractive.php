@@ -15,7 +15,7 @@ session_start();
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<?php include 'headerSearch.php'; ?>
+		<?php include 'header.php'; ?>
 		<center> 
 			<form id="searchbox" action="" method="POST">
 				<fieldset>
