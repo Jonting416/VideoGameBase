@@ -38,19 +38,7 @@
 				    $picURL = $_POST["picURL"];
 				    $msrp = $_POST["msrp"];
 				    $pubname = $_POST["pubname"];
-				    $genre = "";
-				    if($_POST["genreForm"][0] == true) {
-				    	$genre .= "RPG ";
-				    }
-				    if($_POST["genreForm"][1] == true) {
-				    	$genre .= "Action ";
-				    }
-				    if($_POST["genreForm"][2] == true) {
-				    	$genre .= "FPS ";
-				    }
-				    if($_POST["genreForm"][3] == true) {
-				    	$genre .= "Adventure";
-				    }
+				    $genre = $_POST["genreForm"];
 				    $multi = $_POST["multi"];
 				    $units_sold = $_POST["units_sold"];
 				    $release_yr = $_POST["release_yr"];
@@ -77,13 +65,8 @@
 					<input type="text" class="form-control" name="picURL">
 				</div>
 				<div class="form-group">
-					<label for="genreForm">Select Genre (ctrl+click to select multiple)</label>
-					<select multiple="multiple" class="form-control" name="genreForm[]">
-						<option value="RPG">RPG</option>
-						<option value="Action">Action</option>
-						<option value="FPS">FPS</option>
-						<option value="Adventure">Adventure</option>
-					</select>
+					<label for="genreForm">Genre:</label>
+					<input type="text" class="form-control" name="genreForm">
 				</div>
 				<div class="form-group">
 					<label for="msrp">MSRP:</label>
