@@ -17,9 +17,6 @@ Login Page <br>
 	</head>
 	<body>
 		<?php include './header.php'; ?>
-<!--Popup for if username or password already in use.
-button is only used for testing purposes-->
-<button onclick="popupAlert()">Test</button> 
 <script>
 function popupAlert(){
 	alert("This username/password combination does not exist!");

@@ -16,29 +16,29 @@ session_start();
 	</head>
 	<body>
 		<?php include 'header.php'; ?>
-		<center> 
+		<div class="container"> 
 			<form id="searchbox" action="" method="POST">
 				<fieldset>
 				<legend>Search</legend>
-				<input id="search" type="text" name="SearchText" placeholder="Type in query here" maxlength="25">
-				<input id="submit" type="submit" value="Search">
+				<input id="search" type="text" name="SearchText" placeholder="Game Name" maxlength="25">
+				<input id="submit" type="button" value="Search">
 				</fieldset>
 			</form>
-		</center>
-		<!--AJAX Script-->
-		<script>
-			$(document).ready(function() {
-				$("#search").change(function() {
-					$.ajax({
-						url: 'searchAjax.php', data: {
-							searchSname: $("#search").val()}, success: function(data) {
-								$('#SnameResult').html(data); 
-							}
+			<!--AJAX Script-->
+			<script>
+				$(document).ready(function() {
+					$("#search").change(function() {
+						$.ajax({
+							url: 'searchAjax.php', data: {
+								searchSname: $("#search").val()}, success: function(data) {
+									$('#SnameResult').html(data); 
+								}
+						});
 					});
 				});
-			});
-		</script>
-		<div id="SnameResult">Search Result</div>
+			</script>
+			<div id="SnameResult"></div>
+		</div>
 	</body>
 
 </html>
