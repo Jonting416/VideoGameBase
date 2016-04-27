@@ -17,6 +17,7 @@
 						if(isset($_SESSION["User"])) {
 							echo "<li>Hello " . $_SESSION['User'] . "!</li>";
 							echo "<li><a href=\"logout.php\">Log Out</a></li>";
+							echo "<li><a href=\"watchlist.php\">Wishlist</a></li>";
 						} else {
 							echo "<script type='text/javascript'>alert('Please login first!');</script>";
 							$URL="./index.php";

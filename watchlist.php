@@ -16,30 +16,28 @@ session_start();
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-		<?php include './header.php'; ?>
-		<!--Can change this to make it prettier later, but for now lets just make the pages-->
-		<h3>Welcome to the Video Gamebase!</h3>
-		<p>Website still in development.</p>
-	<?php 
+	<?php include './header.php'; 
 	require "dbutil.php";
 	$db = DbUtil::loginConnection();
 
-	$sql = ("SELECT * FROM Comments"); 
+	$username = $_SESSION["User"];
+	$sql = ("SELECT * FROM Watchlist"); 
 	$result = $db->query($sql);
+	echo "Your wishlist: <br>";
+	echo '<table class="table table-striped">'; //putting results into a table
 	if ($result->num_rows>0){ 
-		echo "<br>Feedback:";
-		echo '<table class="table table-striped">'; //putting results into a table
-		while($row = $result->fetch_assoc()){ //Checking game table
-			echo "<tr>" ;
-			echo '<td>'.$row["username"].": ".$row["c_txt"].'</td>';
+		while ($row = $result->fetch_assoc()){ //Search through every row
+			if($row["username"] == $username){
+				echo "<tr>";
+				echo '<td>'.$row["g_name"].'</td>';	
+			}
 		}
 	}
 	?>
 
-	<form id="commentBox" action="insertComment.php" method="POST">
-		<input id="search" type="text" name="commentText" placeholder="Comment" maxlength="250">
-		<input id="submit" type="submit" value="Leave Comment">
-	</form>
 	<br>
+	<a href="removeWatchlist.php">Remove Game from Watchlist</a>
+	<br>
+	<a href="addWatchlist.php">Add Game to Watchlist</a>
 	</body>
 </html>
