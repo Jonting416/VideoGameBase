@@ -15,10 +15,8 @@ class DbUtil{
 			$db->close();
 			exit();
 		}
-		
 		return $db;
 	}
-	
 }
 ?>
 

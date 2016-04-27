@@ -17,7 +17,6 @@ Browse
 	</head>
 	<body>
 		<?php include 'header.php' ?>
-
 <?php 
 require "dbutil.php";
 $db = DbUtil::loginConnection();
