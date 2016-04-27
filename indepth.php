@@ -19,6 +19,7 @@ In-Depth
 		<?php include 'header.php' ?>
 		
 		<div class="container">
+			<center>
 			<?php
 				require "dbutil.php";
 				$db = DbUtil::loginConnection();
@@ -32,6 +33,7 @@ In-Depth
 				$genre = $row["genre"];
 				$msrp = $row["msrp"];
 				$pub = $row["p_name"];
+				$URL = $row["cover_pic"];
 				$multiplayer = $row["multiplayer"];
 				$units_sold = $row["units_sold"];
 				$release_yr = $row["release_yr"];
@@ -39,6 +41,13 @@ In-Depth
 				$trailerLink = $row1["trailer_link"];
 				$reviewLink = $row1["r_link"];
 			?>
+			<div class="row">
+				<div class="col-md-12">
+					<?php
+						echo "<img src=\"".$URL."\">"
+					?>
+				</div>
+			</div>
 			<div class="row">
 				<div class="col-md-4">Game Name:</div>
 				<div class="col-md-8"><?php echo $name; ?></div>
@@ -79,6 +88,7 @@ In-Depth
 				<div class="col-md-4">Review Link:</div>
 				<div class="col-md-8"><?php echo "<a href=".$reviewLink.">".$reviewLink."</a>"; ?></div>
 			</div>
+		</center>
 		</div>
 	</body>
 </html>

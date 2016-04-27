@@ -32,19 +32,24 @@ $db = DbUtil::loginConnection();
 	$resultPublish = $db->query($sqlPublish);
 	if ($result->num_rows>0 || $result1->num_rows>0){ //Looking in both game and console table for query
 		echo "<br>Results:";
-		echo '<table class="table table-striped">'; //putting results into a table
+		echo '<table class="table table-striped"><th>Name</th><th>Genre</th><th>MSRP</th><th>Publisher</th><th>Average Review</th>'; //putting results into a table
 		while($row = $resultJoin->fetch_assoc()){ //Checking game table
 			echo "<tr>" ;
-			echo '<td><a href="indepth.php?name='.$row["g_name"].'">'.$row["g_name"].'</a></td>'. "<td> Genre: ".$row["genre"]."</td><td> MSRP: $".$row["msrp"]."</td><td> Publisher: ".$row["p_name"]."</td>"."<td>Average Review: ".$row["Average"]."</td><td></td>";
+			echo '<td><a href="indepth.php?name='.$row["g_name"].'">'.$row["g_name"].'</a></td>'. "<td>".$row["genre"]."</td><td>$".$row["msrp"]."</td><td>".$row["p_name"]."</td>"."<td>".$row["Average"]."</td><td></td>";
 		}
+		echo '</table>';
+		echo '<br>Consoles:<table class="table table-striped"><th>Name</th><th>Manufacturer</th><th>MSRP</th><th>Units Sold</th><th>Release Date</th><th>Top Game</th>';
 		while($row1 = $result1->fetch_assoc()){ //Checking console table
 			echo "<tr>";
-			echo "<td> Console: ".$row1["c_name"]."</td><td> Manufacturer: ".$row1["manufacturer"]."</td><td> MSRP: $".$row1["msrp"]."</td><td> Units Sold: ".$row1["units_sold"]."</td><td> Release Date: ".$row1["release_date"]."</td><td> Top Game: ".$row1["top_game"]."</td>";
+			echo "<td> ".$row1["c_name"]."</td><td>".$row1["manufacturer"]."</td><td>$".$row1["msrp"]."</td><td>".$row1["units_sold"]."</td><td>".$row1["release_date"]."</td><td>".$row1["top_game"]."</td>";
 		}
+		echo '</table>';
+		echo '<br>Publishers:<table class="table table-striped"><th>Name</th><th>Location</th><th>Number of Games Published</th><th>Revenue</th><th>CEO</th><th>Established</th>';
 		while($row2 = $resultPublish->fetch_assoc()){ //Checking publisher table
 			echo "<tr>";
-			echo "<td> Publisher: ".$row2["p_name"]."</td><td> Location: ".$row2["location"]."</td><td> Number of Games Published: ".$row2["num_games"]."</td><td>Revenue: $".$row2["revenue"]."</td><td> CEO: ".$row2["ceo"]."</td><td> Established: ".$row2["p_year"]."</td>";
+			echo "<td> ".$row2["p_name"]."</td><td> ".$row2["location"]."</td><td>".$row2["num_games"]."</td><td>$".$row2["revenue"]."</td><td> ".$row2["ceo"]."</td><td>".$row2["p_year"]."</td>";
 		}
+		echo '</table>';
 	}
 	else{ //Found no games or console names that matched
 		echo "No Results Found";
