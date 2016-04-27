@@ -17,13 +17,31 @@
 	</head>
 
 	<body>
+		<?php
+			if(isset($_POST["delete"])) {
+				require "dbutil.php";
+				$db = DbUtil::loginConnection();
+				$sql = "DELETE FROM Login WHERE username='".$_SESSION["User"]."'";
+				$sql2 = "DELETE FROM User WHERE username='".$_SESSION["User"]."'";
+				$db->query($sql);
+				$db->query($sql2);
+				session_unset();
+				session_destroy();
+				$db->close;
+			}
+		?>
 		<?php include './header.php'; ?>
 		<div class="container">
 			<div class="jumbotron">
-				<p style="color:red;font-size:xx-large;">Are you sure?  You can't go back after you do this!</p>
+				<?php
+					if(isset($_POST["delete"])) {
+						echo "<p>Account Deleted.</p>";
+					}
+				?>
+				<p style="color:red;font-size:xx-large;">"Are you sure?  You can't go back after you do this!"</p>
 				<form class="form-inline" role="form" method="POST" action="deleteAccount.php">
-					<button type="submit" class="btn btn-danger">Yes, I want to delete my account.</button>
-					<a href="./index.php"><button type="button" class="btn btn-secondary">No, I do not want to delete my account.</button></a>
+				<button type="submit" class="btn btn-danger" name="delete">Yes, I want to delete my account.</button>
+				<a href="./index.php"><button type="button" class="btn btn-secondary">No, I do not want to delete my account.</button></a>
 				</form>
 			</div>
 		</div>
