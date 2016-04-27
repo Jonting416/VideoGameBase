@@ -47,33 +47,18 @@ into our database
 		 echo "<script type='text/javascript'>alert('Username already taken!');</script>";
 	}
 	else if ($flag == FALSE){
-		echo "new account created";
 		$var1 = $_POST["Username"];
 		$var2 = $_POST["Password"];
 		$fName = $_POST["FirstName"];
 		$lName = $_POST["LastName"];
 		$email = $_POST["Email"];
-		$sql1 = "INSERT INTO Login (username, password) VALUES ('$var1','$var2')"; //apparently passing variables is a security flaw, idk why
-		$sql2 = "INSERT INTO User (username, first_name, last_name, email) VALUES ('$var1','$fName','$lName','$email')"; //No errors, but doesn't add anything into the table
+		$sql1 = "INSERT INTO Login (username, password) VALUES ('$var1','$var2')"; //apparently passing variables is a security flaw, idk why. 
+		$sql2 = "INSERT INTO User (username, first_name, last_name, email) VALUES ('$var1','$fName','$lName','$email')"; 
 		$db->query($sql1);
 		$db->query($sql2);
+		echo "new account created";
 	}
 $db->close;
 ?>
 </body>
 </html>
-
-<!--  query for printing out all of the console names
-require "dbutil.php";
-$db = DbUtil::loginConnection();
-$sql = ("SELECT c_name FROM Console");
-$result = $db->query($sql);
-if ($result->num_rows > 0){
-	while ($row = $result->fetch_assoc()){
-		echo $row["c_name"]."<br>";
-	}
-}
-else {
-	echo "There are no entries";
-}
- -->

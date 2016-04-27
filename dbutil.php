@@ -1,16 +1,14 @@
 <?php
 class DbUtil{
-	//require "library.php";
+	public static $loginUser = "cs4750jt4ue"; 
+	public static $loginPass = "H8KQ27YTB4hGQu4L";
+	public static $host = "stardock.cs.virginia.edu"; // DB Host
+	public static $schema = "cs4750jt4ue"; // DB Schema
 	
-	$SERVER = 'stardock.cs.virginia.edu';
-	$DATABASE = 'cs4750jt4ue';
-	$USERNAME = 'cs4750jt4ue';
-	$PASSWORD = 'H8KQ27YTB4hGQu4L';
-
 	public static function loginConnection(){
 		$db = new mysqli(DbUtil::$host, DbUtil::$loginUser, DbUtil::$loginPass, DbUtil::$schema);
 	
-		if($db->connect_error){
+		if($db->connect_errno){
 			echo("Could not connect to db");
 			$db->close();
 			exit();

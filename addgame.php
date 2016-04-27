@@ -61,7 +61,7 @@
 				    $units_sold = $_POST["units_sold"];
 				    $release_yr = $_POST["release_yr"];
 				    $meta_score = $_POST["meta_score"];
-				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')";
+				    $sql = "INSERT INTO Game (g_id, g_name, cover_pic, genre, msrp, p_name) VALUES ('$gameid', '$gamename', '$picURL', '$Genre', '$msrp', '$pubname')"; //Doesnt work, neither tables are getting updated
 				    $sql2 = "INSERT INTO Depth (g_id, multiplayer, units_sold, release_yr, meta_score) VALUES ('$gameid', '$multi', '$units_sold', '$release_yr', '$meta_score')";
 				    $db->query($sql);
 				    $db->query($sql2);
@@ -80,14 +80,6 @@
 				<div class="form-group">
 					<label for="picURL">Cover Image (URL):</label>
 					<input type="text" class="form-control" name="picURL">
-				</div>
-				<div class="form-group">
-					<label for="publisher">Publisher:</label>
-					<input type="text" class="form-control" name="publisher">
-				</div>
-				<div class="form-group">
-					<label for="MSRP">MSRP:</label>
-					<input type="text" class="form-control" name="MSRP">
 				</div>
 				<div class="form-group">
 					<label for="genreForm">Select Genre (ctrl+click to select multiple)</label>
@@ -123,7 +115,6 @@
 				</div>
 				<button type="submit" class="btn btn-primary" id="submit">Submit</button>
 			</form>
-			?>
 		</div>
 	</body>
 </html>

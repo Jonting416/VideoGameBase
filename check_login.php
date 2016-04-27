@@ -55,6 +55,7 @@ if ($result->num_rows > 0){
 		echo "<script type ='text/javascript'>document.location.href='{$URL}';</script>";
 		echo '<li><a href="signup.php">Sign Up</a></li>
 		<li><a href="login.php">Log In</a></li>';
+		echo "You are now logged in";
 	}
 	else if ($flag == FALSE){
 		echo "Could not login, please try again";
