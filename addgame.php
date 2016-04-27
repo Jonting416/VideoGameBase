@@ -39,22 +39,17 @@
 				    $picURL = $_POST["picURL"];
 				    $msrp = $_POST["msrp"];
 				    $pubname = $_POST["pubname"];
-				    $genarr = implode($_POST["genreForm"]);
-				    $pos = strpos($genarr, '1');
 				    $genre = "";
-				    if($pos !== false) {
+				    if($_POST["genreForm"][0] == true) {
 				    	$genre .= "RPG ";
 				    }
-				    $pos = strpos($genarr, '2');
-				    if($pos !== false) {
+				    if($_POST["genreForm"][1] == true) {
 				    	$genre .= "Action ";
 				    }
-				    $pos = strpos($genarr, '3');
-				    if($pos !== false) {
+				    if($_POST["genreForm"][2] == true) {
 				    	$genre .= "FPS ";
 				    }
-				    $pos = strpos($genarr, '4');
-				    if($pos !== false) {
+				    if($_POST["genreForm"][3] == true) {
 				    	$genre .= "Adventure";
 				    }
 				    $multi = $_POST["multi"];
@@ -65,12 +60,12 @@
 				    $sql2 = "INSERT INTO Depth (multiplayer, units_sold, release_yr, meta_score) VALUES ('$multi', '$units_sold', '$release_yr', '$meta_score')";
 				    $q = $db->query($sql);
 				    $db->query($sql2);
-				    //echo "<p>Game added!</p>";
 				    if($q) {
 				    	echo "<p>Game Added!</p>";
 				    } else {
 				    	echo "<p>Game failed to add.</p>";
 				    }
+				    $db->close;
 				}
 			?>
 			<form enctype="multipart/form-data" role="form" method="POST" action="addgame.php">
