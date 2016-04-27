@@ -47,7 +47,7 @@ into our database
 	}
 	else if ($flag == FALSE){
 		$var1 = $_POST["Username"];
-		$var2 = $_POST["Password"];
+		$var2 = md5($_POST["Password"]);
 		$fName = $_POST["FirstName"];
 		$lName = $_POST["LastName"];
 		$email = $_POST["Email"];

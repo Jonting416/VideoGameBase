@@ -37,7 +37,7 @@ $sql = ("SELECT username, password FROM Login");
 $result = $db->query($sql);
 if ($result->num_rows > 0){
 	while ($row = $result->fetch_assoc()){ //Search through every row
-		if($row["username"] == $_POST["Username"] && $row["password"] == $_POST["Password"]){
+		if($row["username"] == $_POST["Username"] && md5($row["password"]) == $_POST["Password"]){
 			$flag = TRUE; 
 		}
 	}
