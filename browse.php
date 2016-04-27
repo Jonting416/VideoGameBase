@@ -24,9 +24,11 @@ $db = DbUtil::loginConnection();
 	$sql = ("SELECT * FROM Game WHERE g_name LIKE '%$searchWord%'"); //Query for finding games
 	$sql1 = ("SELECT * FROM Console WHERE c_name LIKE '%$searchWord%'"); //Query for finding consoles
 	$sqlJoin = ("SELECT g_name, genre, msrp, p_name, g_id, AVG(score) AS Average FROM Game NATURAL JOIN Reviewer GROUP BY g_id"); 
+	$sqlPublish = ("SELECT * FROM Publisher");
 	$result = $db->query($sql);
 	$result1 = $db->query($sql1);
 	$resultJoin = $db->query($sqlJoin);
+	$resultPublish = $db->query($sqlPublish);
 	if ($result->num_rows>0 || $result1->num_rows>0){ //Looking in both game and console table for query
 		echo "<br>Results:";
 		echo '<table class="table table-striped">'; //putting results into a table
@@ -37,6 +39,10 @@ $db = DbUtil::loginConnection();
 		while($row1 = $result1->fetch_assoc()){ //Checking console table
 			echo "<tr>";
 			echo "<td> Console: ".$row1["c_name"]."</td><td> Manufacturer: ".$row1["manufacturer"]."</td><td> MSRP: $".$row1["msrp"]."</td><td> Units Sold: ".$row1["units_sold"]."</td><td> Release Date: ".$row1["release_date"]."</td><td> Top Game: ".$row1["top_game"]."</td>";
+		}
+		while($row2 = $resultPublish->fetch_assoc()){ //Checking publisher table
+			echo "<tr>";
+			echo "<td> Publisher: ".$row2["p_name"]."</td><td> Location: ".$row2["location"]."</td><td> Number of Games Published: ".$row2["num_games"]."</td><td>Revenue: ".$row2["revenue"]."</td><td> CEO: ".$row2["ceo"]."</td><td> Established: ".$row2["p_year"]."</td>";
 		}
 	}
 	else{ //Found no games or console names that matched
